@@ -1,1 +1,51 @@
-<p>product works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example</title>
+  <link rel="stylesheet" href="product.component.scss">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-6 text-start">
+                Product List
+              </div>
+              <div class="col-6 text-end">
+                <button class="btn btn-custom">New</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Card Body Content -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4" *ngIf="isSidePanelVisible">
+        <div class="card">
+          <div class="card-header text-start">
+            <div class="row">
+              <div class="col-6">
+                New Product
+              </div>
+              <div class="col-6 text-end">
+                <button class="btn btn-custom">Close</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Card Body Content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

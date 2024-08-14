@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Goblin+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+ $color-text: black;
+ $color-background: #EFECE3;
+ $color-highlight: #FF0000;
+ 
+ /*--------------------------------
+  Functional Styles (Required)
+ ---------------------------------*/
+ 
+ header { position: relative; }
+ #toggle, .toggle { display: none; }
+ .menu > li { list-style: none; float:left;	}
+ 
+ /* Nicolas Gallagher micro clearfix */
+ .clearfix:before, .clearfix:after { display: table; content: ""; }
+ .clearfix:after { clear: both; }
+ 
+ @media only screen and (max-width: 768px){
+     .menu { display: none; opacity: 0; width: 100%; position: absolute; right: 0; }
+     .menu > li { display: block; width: 100%; margin: 0; }
+     .menu > li > a { display: block; width: 100%; text-decoration: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+     .menu > li > a { text-decoration: none; }
+     .toggle { display: block; position: relative; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+     #toggle:checked + nav .menu { display: block; opacity: 1;}
+ }
+
+ 
+ /*--------------------------------
+  Presentation Styles (Editable)
+ ---------------------------------*/
+ body {
+    background-color: $color-background;
+ }
+ header {
+     min-height: 4.5em;
+     height: 100%;
+     padding-top: 50px;
+     margin: 0 30px;
+     background: $color-background;
+     font-family: "Jost", sans-serif;
+     border-bottom: solid black;
+ }
+
+ 
+ header > h1 {
+     font-family: "Goblin One", serif;
+     float: left;
+     margin: 15px 0;
+     padding: 10px;
+     line-height: 1;
+     font-size: 28px;
+     color: $color-text;
+ }
+ 
+ nav { 
+     display: block; 
+     float: right; 
+ }
+ 
+ nav, .menu, .menu > li, .menu > li > a { height: 100%; }
+ 
+ .menu > li > a {
+    text-decoration: none !important;
+  }
+  
+ .menu > li > a{
+     font-size: 22px;
+     display: block;
+     padding: 0 40px;
+     color: $color-text;
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box; 
+     box-sizing: border-box;
+     /*
+     -webkit-transition: all 0.1s linear;
+     -moz-transition: all 0.1s linear;
+     -o-transition: all 0.1s linear;
+     transition: all 0.1s linear;
+     */
+ }
+ 
+ .menu > li > a:hover, .menu > li > a:focus{
+     color: $color-text;
+     opacity: 0.5;
+ 
+ }
+ 
+ .toggle { z-index: 2; }
+ 
+ @media only screen and (max-width: 768px){
+     .menu {
+         background: $color-background;
+         border-top: 1px solid $color-text;
+     }
+     
+     .menu, .menu > li, .menu > li > a { height: auto; }
+     .menu > li > a { padding: 15px 15px; }
+    
+     
+     .menu > li > a:hover, .menu > li > a:focus{
+         background: $color-text;
+         box-shadow: inset 5px 0px $color-highlight;
+         padding: 15px 15px 15px 25px;
+         text-decoration: none; 
+     }
+     
+     .toggle:after {
+         content: attr(data-open);
+         
+         display: block;
+         margin: 0.875em;
+         padding: 0.5em 1.5em;
+         background: $color-background;
+         text-align: center;
+         font-size: 16px;
+         font-weight: bold;
+         color: $color-text;
+         border: 2px solid $color-text;
+         -webkit-border-radius: 8px;
+         border-radius: 8px;
+         -webkit-transition: all 0.1s linear;
+         -moz-transition: all 0.1s linear;
+         -o-transition: all 0.1s linear;
+         transition: all 0.1s linear;
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box; 
+     }
+     
+     .toggle:hover:after{
+         color: $color-background;
+         background: $color-text;
+     }
+     
+     #toggle:checked + nav .toggle:after{
+         content: attr(data-close);
+         color: $color-background;
+         background: $color-text;
+     }
+ }
+ 
+ @media only screen and (max-width: 479px){
+     header > h1 { text-align: center; }
+     header > h1, nav, .toggle:after{ float: none; }
+     .toggle:after { text-align: center; width: 100%; }
+ }

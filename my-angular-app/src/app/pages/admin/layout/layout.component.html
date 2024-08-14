@@ -1,1 +1,27 @@
-<p>layout works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crumb & Co.</title>
+  <link rel="stylesheet" href="layout.component.scss">
+</head>
+<body>
+    <header>
+        <h1>Crumb & Co.</h1>
+        <input type="checkbox" id="toggle" />
+        <nav>
+            <label for="toggle" class="toggle" data-open="Menu" data-close="Close" onclick></label>
+            <ul class="menu">
+                <li><a routerLink="/products">Product</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+
+    </div>
+</body>
